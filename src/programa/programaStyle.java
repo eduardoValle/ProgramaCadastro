@@ -1,70 +1,121 @@
 package programa;
 
 import java.awt.Color;
-
-import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
 import javax.swing.JRootPane;
 import javax.swing.JTextField;
 
 public class programaStyle extends JFrame{
-	
-	JTextField     login;
-	JPasswordField senha;
-	JButton clientes, produtos, venda, funcionarios;
-	
-	
+		
 	public programaStyle()	{
 		
-		
-		new menuListaStyle();
 		
 		/************************
 	          Style JANELA
 	    ************************/
-
+		
 		setTitle("Programa de Cadastro de Produtos, Funcionarios e Clientes");
-		setLocation(200, 40);
-		setSize(900, 600);
+		setBounds(200, 40, 900, 600);
 		setLayout(null);											   // Deixei sem layout para programar-mos TUDDO =]
 		setUndecorated(true);                                         // com false abre frame dentro de um frame
 		getRootPane().setWindowDecorationStyle(JRootPane.FRAME);     // libera o design da tela
 		setDefaultCloseOperation(EXIT_ON_CLOSE);					//  Arruma o botão de fechar
 
-		//  Style Campos
+				
+		Color corTudo   = new Color(205, 92, 92); 
 		
+		JPanel tudo = new JPanel();       		   // Envolve TODOS os conteudos do programa!!
+		tudo.setBounds(0, 0, 903, 600);
+//		tudo.setBackground(corTudo);  		     // descomente a cor para ver a onde está o JPanel
+		tudo.setLayout(null);
+		
+		getContentPane().add(tudo);
+		
+		/******************************
+             Style BOTÕES DE CIMA
+		******************************/
+		
+		Color corCima   = new Color(235, 220, 160); 
+		
+		JPanel cima = new JPanel();       		   // Envolve TUDO que estám em cima (botões, campo pesquisa...)
+		cima.setBounds(0, 0, 900, 65);
+	//	cima.setBackground(corCima);  		     // descomente a cor para ver a onde está o JPanel
+		cima.setLayout(null);
+		
+		Color corbotoes   = new Color(0, 100, 0);
+		
+		JPanel botoes = new JPanel();          // Envolve TUDO que estám em cima (botões, campo pesquisa...)
+		botoes.setBounds(0, 0, 350, 65);
+	//	botoes.setBackground(corbotoes);       // descomente a cor para ver a onde está o JPanel
+		botoes.setLayout(null);
 		
 		JButton venda = new JButton();
 		venda.setText("Venda");
 		venda.setToolTipText("Venda");
-		venda.setBounds(0, 0, 60, 60);
+		venda.setBounds(5, 0, 60, 60);
 		
 		JButton clientes = new JButton();
 		clientes.setText("Clientes");
 		clientes.setToolTipText("Clientes");
-		clientes.setBounds(61, 0, 60, 60);
+		clientes.setBounds(66, 0, 60, 60);
 		
 		JButton produtos = new JButton();
 		produtos.setText("Produtos");
 		produtos.setToolTipText("Produtos");
-		produtos.setBounds(122, 0, 60, 60);
+		produtos.setBounds(127, 0, 60, 60);
 		
 		JButton funcionarios = new JButton();
 		funcionarios.setText("Funcionários");
 		funcionarios.setToolTipText("Funcionários");
-		funcionarios.setBounds(183, 0, 60, 60);
+		funcionarios.setBounds(188, 0, 60, 60);
+		
+		JButton relatorios = new JButton();
+		relatorios.setText("Relatório");
+		relatorios.setToolTipText("Relatório");
+		relatorios.setBounds(249, 0, 60, 60);
 		
 		
 		// Colocando os Campos visíveis
-		menuListaStyle menu = new menuListaStyle();
 		
-		getContentPane().add(clientes);
-		getContentPane().add(produtos);
-		getContentPane().add(funcionarios);
-		getContentPane().add(venda);
+		tudo.add(cima);
+		cima.add(botoes);
+		botoes.add(clientes);
+		botoes.add(produtos);
+		botoes.add(funcionarios);
+		botoes.add(venda);
+		botoes.add(relatorios);
+		
+		
+		
+		/****************************
+               Style PESQUISA
+		****************************/
+		
+		Color corPesquisa   = new Color(235, 220, 160); 
+		
+		JPanel pesquisar = new JPanel();           // Envolve o campo e o botão de pesquisa
+		pesquisar.setBounds(655, 30, 233, 33);
+//		pesquisar.setBackground(corPesquisa);      // descomente a cor para ver a onde está o JPanel
+		pesquisar.setLayout(null);
+		
+		JTextField pesquisa = new JTextField();
+		pesquisa.setText("Pesquisar!!");
+		pesquisa.setToolTipText("Digite uma palavra para pesquisar no banco de dados.");
+		pesquisa.setBounds(0, 0, 200, 30);
+		
+		JButton ir = new JButton();
+		ir.setText("Ir");
+		ir.setToolTipText("Pesquisar");
+		ir.setBounds(200, 0, 30, 30);
+		
+		cima.add(pesquisar);
+		pesquisar.add(pesquisa);
+		pesquisar.add(ir);
+	
+		
+		
 		
 		
 		/************************
@@ -72,16 +123,17 @@ public class programaStyle extends JFrame{
 		************************/
 		
 		Color corFundo  = new Color(112, 128, 144); 
-		Color corMenu   = new Color(235, 220, 160); 
-		JPanel fundo    = new JPanel();
-		JPanel menuMeio = new JPanel(); 
 		
+		JPanel fundo    = new JPanel();      				 // Envolve TODA a parte de baixo dos botões!!
 		fundo.setBounds(5, 65, 880, 495);
-		fundo.setBackground(corFundo);
+		fundo.setBackground(corFundo);         			   // descomente a cor para ver a onde está o JPanel
 		fundo.setLayout(null);
 		
-		menuMeio.setBounds(215,80, 450, 200);
-		menuMeio.setBackground(corMenu);
+		Color corMenu   = new Color(235, 220, 160); 
+		
+		JPanel menuMeio = new JPanel(); 				     // Envolve só Menu central
+		menuMeio.setBounds(215,80, 453, 203);  
+	//	menuMeio.setBackground(corMenu);   					// descomente a cor para ver a onde está o JPanel
 		menuMeio.setLayout(null);
 		
 		// Botoes 
@@ -117,7 +169,7 @@ public class programaStyle extends JFrame{
 		novoRelatorioProdutos.setBounds(300, 100, 150, 100);
 		
 
-		getContentPane().add(fundo);
+		tudo.add(fundo);
 		fundo.add(menuMeio);
 		menuMeio.add(novoVenda);
 		menuMeio.add(novoCliente);
