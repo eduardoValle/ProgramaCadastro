@@ -23,9 +23,9 @@ public class loginStyle extends JFrame{
 		setLayout(null);											   // Deixei sem layout para programar-mos TUDDO =]
 		setUndecorated(true);                                         // com false abre frame dentro de um frame
 		getRootPane().setWindowDecorationStyle(JRootPane.FRAME);     // libera o design da tela
-		setDefaultCloseOperation(EXIT_ON_CLOSE);					//  Arruma o botão de fechar
-
+		setDefaultCloseOperation(EXIT_ON_CLOSE);				//  Arruma o botão de fechar
 		
+
 		Color corTudo   = new Color(205, 92, 92); 
 		
 		JPanel tudoLogin = new JPanel();       		   // Envolve TODA a janela!!
@@ -33,9 +33,8 @@ public class loginStyle extends JFrame{
 //		tudoLogin.setBackground(corTudo);  		     // descomente a cor para ver a onde está o JPanel
 		tudoLogin.setLayout(null);
 		
+		
 		getContentPane().add(tudoLogin);	
-		
-		
 		
 		
 		//  Style Campos
@@ -43,9 +42,13 @@ public class loginStyle extends JFrame{
 		JLabel loginL = new JLabel();
 		loginL.setText("Login");
 		loginL.setBounds(100, 100, 350, 20);
+		
+		
 
 		JTextField login = new JTextField();
 		login.setBounds(100, 130, 350, 25);
+		
+
 
 		JLabel senhaL = new JLabel();
 		senhaL.setText("Senha");
@@ -53,14 +56,16 @@ public class loginStyle extends JFrame{
 
 		JPasswordField senha = new JPasswordField();
 		senha.setBounds(100, 200, 350, 25);
+	
+		
 
 		JButton logar = new JButton();
 		logar.setBounds(100, 260, 100, 25);
 		logar.setText("Logar-se");
-
+		loginL.setVisible(true);
 
 		// Colocando os Campos visíveis
-
+		
 		tudoLogin.add(loginL);
 		tudoLogin.add(login);
 		tudoLogin.add(senhaL);
@@ -121,6 +126,6 @@ public class loginStyle extends JFrame{
 
 
 	public static void main(String arg[]){ 
-		new loginStyle().setVisible(true);
+		new loginStyle().setVisible(true);;
 	}
 }
