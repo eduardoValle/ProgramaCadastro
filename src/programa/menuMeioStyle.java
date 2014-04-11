@@ -4,13 +4,17 @@ import javax.swing.JInternalFrame;
 import javax.swing.JTextArea;
 
 
-public class menuMeioStyle extends botoes {
+public class MenuMeioStyle extends Botoes {
+	
 
-	public menuMeioStyle(){
+	JButton novoVenda, novoCliente, novoProduto, novoFuncionario, novoRelatorioVendas, novoRelatorioProdutos;
+
+	public MenuMeioStyle(){
+		
 		boolean resizable = false;  
 		boolean closeable = false;  
 		boolean maximizable = false;  
-		boolean iconifiable = false;  
+		boolean iconifiable = false;
 		String title = "Menu";  
 		
 		JInternalFrame menuMeio = new JInternalFrame(title, resizable, closeable, maximizable, iconifiable);  
@@ -24,32 +28,32 @@ public class menuMeioStyle extends botoes {
 		
 		// Botoes 
 		
-		JButton novoVenda = new JButton();
+		novoVenda = new JButton();
 		novoVenda.setText("Nova Venda");
 		novoVenda.setToolTipText("Nova Venda");
 		novoVenda.setBounds(1, 1, 150, 100);
 		
-		JButton novoCliente = new JButton();
+		novoCliente = new JButton();
 		novoCliente.setText("Novo Cliente");
 		novoCliente.setToolTipText("Novo Cliente");
 		novoCliente.setBounds(151, 1, 150, 100);
 
-		JButton novoProduto = new JButton();
+		novoProduto = new JButton();
 		novoProduto.setText("Novo Produto");
 		novoProduto.setToolTipText("Novo Produto");
 		novoProduto.setBounds(301, 1, 150, 100);
 		
-		JButton novoFuncionario = new JButton();
+		novoFuncionario = new JButton();
 		novoFuncionario.setText("Novo Funcionário");
 		novoFuncionario.setToolTipText("Novo Funcionário");
 		novoFuncionario.setBounds(1, 101, 150, 100);
 		
-		JButton novoRelatorioVendas = new JButton();
+		novoRelatorioVendas = new JButton();
 		novoRelatorioVendas.setText("Relatório de Vendas");
 		novoRelatorioVendas.setToolTipText("Relatório de Vendas");
 		novoRelatorioVendas.setBounds(151, 101, 150, 100);
 		
-		JButton novoRelatorioProdutos = new JButton();
+		novoRelatorioProdutos = new JButton();
 		novoRelatorioProdutos.setText("Relatório de Produtos");
 		novoRelatorioProdutos.setToolTipText("Relatório de Produtos");
 		novoRelatorioProdutos.setBounds(301, 101, 150, 100);
@@ -62,12 +66,7 @@ public class menuMeioStyle extends botoes {
 		menuMeio.add(novoRelatorioProdutos);
 
 	}  
-	
-	public static void main(String arg[]){ 
-		new menuListaStyle().setVisible(true);
-		new botoesStyle().setVisible(true);
-		new menuMeioStyle().setVisible(true);
-		
-	}
 
 }
+
+

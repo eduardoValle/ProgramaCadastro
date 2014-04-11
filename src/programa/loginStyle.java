@@ -11,10 +11,13 @@ import javax.swing.JPasswordField;
 import javax.swing.JRootPane;
 import javax.swing.JTextField;
 
-public class loginStyle extends JFrame{
+public class LoginStyle extends JFrame{
 
+	JTextField login;
+	JPasswordField senha;
+	JButton logar;
 
-	public loginStyle()	{
+	public LoginStyle()	{
 
 		// Style janela
 
@@ -25,12 +28,10 @@ public class loginStyle extends JFrame{
 		getRootPane().setWindowDecorationStyle(JRootPane.FRAME);     // libera o design da tela
 		setDefaultCloseOperation(EXIT_ON_CLOSE);				//  Arruma o botão de fechar
 		
-
-		Color corTudo   = new Color(205, 92, 92); 
 		
 		JPanel tudoLogin = new JPanel();       		   // Envolve TODA a janela!!
 		tudoLogin.setBounds(0, 0, 603, 453);
-//		tudoLogin.setBackground(corTudo);  		     // descomente a cor para ver a onde está o JPanel
+//		tudoLogin.setBackground(new Color(205, 92, 92));  		     // descomente a cor para ver a onde está o JPanel
 		tudoLogin.setLayout(null);
 		
 		
@@ -44,8 +45,7 @@ public class loginStyle extends JFrame{
 		loginL.setBounds(100, 100, 350, 20);
 		
 		
-
-		JTextField login = new JTextField();
+		login = new JTextField();
 		login.setBounds(100, 130, 350, 25);
 		
 
@@ -54,12 +54,12 @@ public class loginStyle extends JFrame{
 		senhaL.setText("Senha");
 		senhaL.setBounds(100, 170, 350, 20);
 
-		JPasswordField senha = new JPasswordField();
+		senha = new JPasswordField();
 		senha.setBounds(100, 200, 350, 25);
 	
 		
 
-		JButton logar = new JButton();
+		logar = new JButton();
 		logar.setBounds(100, 260, 100, 25);
 		logar.setText("Logar-se");
 		loginL.setVisible(true);
@@ -124,8 +124,4 @@ public class loginStyle extends JFrame{
 
 	}
 
-
-	public static void main(String arg[]){ 
-		new loginStyle().setVisible(true);;
-	}
 }

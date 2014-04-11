@@ -9,16 +9,17 @@ public class AcessoBanco {
 
 	public static void main(String[] args){
 		
-		String url = "jdbc:mysql://localhost:3306";
+		String url = "jdbc:mysql://localhost:3306/programa_cadastro";
 		
-		String sql = "insert into tabela (cod, nome) values ('dudu', 'edu')";
+		String sql = "insert into aqui (cod, nome) values ('ehheheheeheh!', 'ohohohohohohohohoh!')";
 		
 		try(
+				
 				Connection conexao = DriverManager.getConnection(url, "root", "root");
-				PreparedStatement stm = conexao.prepareStatement(sql);
+//				PreparedStatement stm = conexao.prepareStatement(sql);
 								
 			){
-		stm.executeUpdate();
+	//	stm.executeUpdate();
 			
 			
 			System.out.println("Deu!! =D");
