@@ -1,5 +1,9 @@
 package programa;
 
+import java.awt.Color;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -17,38 +21,47 @@ public class BotoesStyle extends MenuLista {
 	//	cima.setBackground(new Color(235, 220, 160));  		     // descomente a cor para ver a onde está o JPanel
 		cima.setLayout(null);
 
-		cima.setVisible(true);
-
+		
 
 		JPanel botoes = new JPanel();          // Envolve TUDO que estám em cima (botões, campo pesquisa...)
-		botoes.setBounds(0, 0, 350, 65);
+		botoes.setBounds(0, 2, 350, 65);
 	//	botoes.setBackground(new Color(0, 100, 0));       // descomente a cor para ver a onde está o JPanel
 		botoes.setLayout(null);
 
-		venda = new JButton();
+		Icon imageVenda = new ImageIcon("C:/Users/Suzana/workspace/ProgramaCadastro/imagens/MINIVENDA.png");
+		venda = new JButton(imageVenda);
 		venda.setText("Venda");
 		venda.setToolTipText("Venda");
 		venda.setBounds(5, 0, 60, 60);
+		venda.setBackground(new Color(10, 89, 193));
 
-		clientes = new JButton();
+		Icon imageClientes = new ImageIcon("C:/Users/Suzana/workspace/ProgramaCadastro/imagens/MINICLIENTE.PNG");
+		clientes = new JButton(imageClientes);
 		clientes.setText("Clientes");
 		clientes.setToolTipText("Clientes");
 		clientes.setBounds(66, 0, 60, 60);
+		clientes.setBackground(new Color(189, 30, 73));
 
-		produtos = new JButton();
+		Icon imageProdutos = new ImageIcon("C:/Users/Suzana/workspace/ProgramaCadastro/imagens/MINIPRODUTO.PNG");
+		produtos = new JButton(imageProdutos);
 		produtos.setText("Produtos");
 		produtos.setToolTipText("Produtos");
 		produtos.setBounds(127, 0, 60, 60);
+		produtos.setBackground(new Color(95, 59, 186));
 
-		funcionarios = new JButton();
+		Icon Funcionarios2 = new ImageIcon("C:/Users/Suzana/workspace/ProgramaCadastro/imagens/MINIFUNCIONARIO.PNG");
+		funcionarios = new JButton(Funcionarios2);
 		funcionarios.setText("Funcionários");
 		funcionarios.setToolTipText("Funcionários");
 		funcionarios.setBounds(188, 0, 60, 60);
+		funcionarios.setBackground(new Color(0, 161, 0));
 
-		relatorios = new JButton();
+		Icon imageRelatorios = new ImageIcon("C:/Users/Suzana/workspace/ProgramaCadastro/imagens/MINIRELATORIO.PNG");
+		relatorios = new JButton(imageRelatorios);
 		relatorios.setText("Relatório");
 		relatorios.setToolTipText("Relatório");
 		relatorios.setBounds(249, 0, 60, 60);
+		relatorios.setBackground(new Color(212, 75, 40));
 		
 		
 		/****************************
@@ -64,12 +77,13 @@ public class BotoesStyle extends MenuLista {
 		pesquisa = new JTextField();
 		pesquisa.setText("Pesquisar!!");
 		pesquisa.setToolTipText("Digite uma palavra para pesquisar no banco de dados.");
-		pesquisa.setBounds(0, 0, 200, 30);
+		pesquisa.setBounds(0, 7, 200, 25);
 
 		ir = new JButton();
 		ir.setText("Ir");
 		ir.setToolTipText("Pesquisar");
-		ir.setBounds(200, 0, 30, 30);
+		ir.setBounds(200, 6, 25, 25);
+		ir.setBackground(new Color(0, 191, 242));
 
 		cima.add(pesquisar);
 		pesquisar.add(pesquisa);

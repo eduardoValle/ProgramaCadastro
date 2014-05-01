@@ -2,10 +2,10 @@ package programa;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 
 import javax.swing.JOptionPane;
-
-import programa.Login.BotaoLogar;
 
 public class Botoes extends BotoesStyle{
 	
@@ -16,8 +16,9 @@ public class Botoes extends BotoesStyle{
 		produtos.addActionListener(new BotaoProdutos());
 		funcionarios.addActionListener(new Botaofuncionarios());
 		relatorios.addActionListener(new BotaoRelatorios());
-		ir.addActionListener(new BotaoIr());
 		
+		pesquisa.addFocusListener(new Pesquisa());
+		ir.addActionListener(new BotaoIr());	
 		
 	}
 	
@@ -26,6 +27,7 @@ public class Botoes extends BotoesStyle{
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			
 			String s = venda.getText();
 			
 			JOptionPane.showMessageDialog(null, s);
@@ -36,9 +38,11 @@ public class Botoes extends BotoesStyle{
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			String s = clientes.getText();
-			
-			JOptionPane.showMessageDialog(null, s);
+
+			Clientes j = new Clientes();     // olhar nome 
+			fundo.add(j.clientes);
+			j.setVisible(true);
+//			j.CarregarConteudo();
 		}
 	}
 	
@@ -72,6 +76,14 @@ public class Botoes extends BotoesStyle{
 		}
 	}
 	
+	
+	
+	/*******************************
+	 *   GERENCIMENTO DE PESQUISA *
+	*******************************/
+	
+	
+	
 	class BotaoIr implements ActionListener{
 
 		@Override
@@ -80,6 +92,26 @@ public class Botoes extends BotoesStyle{
 			
 			JOptionPane.showMessageDialog(null, s);
 		}
+	}
+	
+	class Pesquisa implements FocusListener{
+
+		@Override
+		public void focusGained(FocusEvent arg0) {
+			if(pesquisa.getText().equals("Pesquisar!!")){
+				pesquisa.setText("");
+			}
+			
+		}
+
+		@Override
+		public void focusLost(FocusEvent arg0) {
+			if(pesquisa.getText().equals("")){
+				pesquisa.setText("Pesquisar!!");
+			}
+			
+		}
+		
 	}
 
 }

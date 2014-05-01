@@ -8,12 +8,16 @@ import javax.swing.JOptionPane;
 public class MenuMeio extends MenuMeioStyle{
 	
 	public MenuMeio(){
+		
+	//	menuMeio.setVisible(true); 
+		
 		novoVenda.addActionListener(new BotaoNovoVenda());
 		novoCliente.addActionListener(new BotaoNovoCliente());
 		novoProduto.addActionListener(new BotaoNovoProduto());
 		novoFuncionario.addActionListener(new BotaoNovoFuncionario());
 		novoRelatorioVendas.addActionListener(new BotaoNovoRelatorioVendas());
 		novoRelatorioProdutos.addActionListener(new BotaoNovoRelatorioProdutos());
+		
 	}
 	
 	
@@ -32,7 +36,6 @@ public class MenuMeio extends MenuMeioStyle{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			String s = novoCliente.getText();
-			
 			JOptionPane.showMessageDialog(null, s);
 		}
 	}
@@ -79,11 +82,12 @@ public class MenuMeio extends MenuMeioStyle{
 		}
 	}
 	
-	
 	public static void main(String arg[]){ 
 
-		new MenuMeio().setVisible(true);
+		MenuMeio m = new MenuMeio();
+		m.setVisible(true);
+		m.menuMeio.setVisible(true);
+		
 		
 	}
-
 }

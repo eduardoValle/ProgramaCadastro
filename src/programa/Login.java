@@ -9,7 +9,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
 import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 
 public class Login extends LoginStyle{
 
@@ -26,13 +28,14 @@ public class Login extends LoginStyle{
 	 ************************************************/
 
 	public boolean camposVazios(){
+		
 		String pass = new String(senha.getPassword());
 		if(login.getText().equals("") || pass.equals("")){
 
-			return false;
+			return true;
 
 		}else{
-			return true;
+			return false;
 		}
 	}
 
@@ -46,7 +49,8 @@ public class Login extends LoginStyle{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 
-			if(camposVazios()){
+			if(!camposVazios()){
+				
 				ArrayList<String> lista = new ArrayList<>();
 
 				String pass = new String(senha.getPassword());			
@@ -73,13 +77,13 @@ public class Login extends LoginStyle{
 					}
 
 				}catch(IndexOutOfBoundsException g){   // NÃO CONSEGUIU LOGAR
-
+					
+					tudoLogin.add(alerta);
 					janelaAlerta.setText("Login ou senha incorretos, ou não existem!!");
 					alerta.setBorder(BorderFactory.createLineBorder(Color.red,3));
 					alerta.setBackground(new Color(255, 193, 193));
 
 					alerta.add(janelaAlerta);
-					tudoLogin.add(alerta);
 
 				}catch(SQLException g){    //  DELETAR NA FASE FINAL ESSE CATCH
 
@@ -88,14 +92,14 @@ public class Login extends LoginStyle{
 				}
 
 			}else{     // fechando if(camposVazios){}
-
+				
+				tudoLogin.add(alerta);
 				janelaAlerta.setText("Você prêcisa preencher ambos os campos!!");
 				alerta.setBorder(BorderFactory.createLineBorder(Color.red,3));
 				alerta.setBackground(new Color(255, 193, 193));
 
 				alerta.add(janelaAlerta);
-				tudoLogin.add(alerta);
-
+				
 			}
 		}
 	}
