@@ -19,9 +19,9 @@ import javax.swing.JTextField;
 
 public class ClientesStyle extends JFrame{
 	
-	JPanel clientes, opcoesCliente, clientesCampo[],clientesCampoNome[], clientesCampoEndereco[], TesteCampo[];
+	JPanel clientes, opcoesCliente, clientesCampo[],clientesCampoNome[], clientesCampoEndereco[], clientesCampoCidade[];
 	JButton excluir[], editar[], novoCliente, pesquisarCliente;
-	JLabel nome[], cargo[], endereco[], telefone[];
+	JLabel nome[], cargo[], endereco[], telefone[], dataNascimento[], CPF[], CEP[], cidade[], estado[],  bairro[];
 	JTextField campoPesquisar;
 
 	int x = 80, i = 0;
@@ -39,6 +39,8 @@ public class ClientesStyle extends JFrame{
 		clientes.setBounds(5, 5, 880, 490);
 		clientes.setBackground(new Color(112, 128, 144));         			   // descomente a cor para ver a onde está o JPanel
 		clientes.setLayout(null);
+		
+		System.out.println(clientes.getLocation());
 	
 		JScrollPane SP = new JScrollPane(clientes);
 		SP.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
@@ -76,11 +78,22 @@ public class ClientesStyle extends JFrame{
 		clientesCampo = new JPanel[10];
 		clientesCampoNome = new JPanel[10];
 		clientesCampoEndereco = new JPanel[10];
-		nome = new JLabel[10];
-		cargo = new JLabel[10];
+		clientesCampoCidade = new JPanel [10];
+		
+		nome	 = new JLabel[10];
+		cargo	 = new JLabel[10];
 		endereco = new JLabel[10];
+		bairro	 = new JLabel[10];
 		telefone = new JLabel[10];
-		editar = new JButton[10];
+		dataNascimento = new JLabel[10];
+		CPF		= new JLabel[10];
+		CEP		= new JLabel[10];
+		cidade	= new JLabel[10];
+		estado	= new JLabel[10];
+		bairro	= new JLabel[10];
+		
+		
+		editar  = new JButton[10];
 		excluir = new JButton[10];
 
 	}
@@ -116,32 +129,72 @@ public class ClientesStyle extends JFrame{
 		clientesCampoEndereco[i].setBackground(new Color(248, 248, 255));         			   // descomente a cor para ver a onde está o JPanel
 		clientesCampoEndereco[i].setLayout(null);
 
+		clientesCampoCidade[i] = new JPanel();
+		clientesCampoCidade[i].setBounds(10, 65, 830, 25);
+		clientesCampoCidade[i].setBackground(new Color(248, 248, 255));         			   // descomente a cor para ver a onde está o JPanel
+		clientesCampoCidade[i].setLayout(null);
+		
 		clientes.add(clientesCampo[i]);
 		clientesCampo[i].add(clientesCampoNome[i]);
 		clientesCampoNome[i].add(clientesCampoEndereco[i]);
+		clientesCampoNome[i].add(clientesCampoCidade[i]);
 
 		// LABELS
 
 		nome[i] = new JLabel();
-		nome[i].setBounds(20, 0, 500, 30);
+		nome[i].setBounds(15, 0, 350, 30);
 		nome[i].setFont( new Font("Arial",Font.BOLD,16));
 		nome[i].setText(conteudo [i][1]);
+		
+		CPF[i] = new JLabel();
+		CPF[i].setBounds(380, 0, 150, 30);
+		CPF[i].setFont( new Font("Arial",Font.BOLD,13));
+		CPF[i].setText("CPF: "+conteudo [i][9]);
 
 		cargo[i] = new JLabel();
-		cargo[i].setBounds(520, 0, 270, 30);
+		cargo[i].setBounds(590, 0, 270, 30);
 		cargo[i].setText("Engenheiro");
 		cargo[i].setFont( new Font("Arial",Font.BOLD,14));
 
 		endereco[i] = new JLabel();
-		endereco[i].setBounds(5, 0, 500, 30);
+		endereco[i].setBounds(5, 0, 350, 30);
 		endereco[i].setFont( new Font("Arial",Font.BOLD,13));
 		endereco[i].setText(conteudo [i][2]);
-
+		
+		bairro[i] = new JLabel();
+		bairro[i].setBounds(370, 2, 200, 25);
+		bairro[i].setFont( new Font("Arial",Font.BOLD,13));
+		bairro[i].setText("Bairro: "+conteudo [i][4]);
+		
 		telefone[i] = new JLabel();
-		telefone[i].setBounds(510, 0, 100, 30);
+		telefone[i].setBounds(580, 0, 100, 30);
 		telefone[i].setFont( new Font("Arial",Font.BOLD,13));
 		telefone[i].setText(conteudo [i][7]);
 
+		// LABELS 2
+		
+		cidade[i] = new JLabel();
+		cidade[i].setBounds(5, 0, 150, 30);
+		cidade[i].setFont( new Font("Arial",Font.BOLD,13));
+		cidade[i].setText(conteudo [i][3]);
+		
+		estado[i] = new JLabel();
+		estado[i].setBounds(160, 0, 110, 30);
+		estado[i].setFont( new Font("Arial",Font.BOLD,13));
+		estado[i].setText(conteudo [i][5]);
+		
+		CEP[i] = new JLabel();
+		CEP[i].setBounds(280, 0, 100, 30);
+		CEP[i].setFont( new Font("Arial",Font.BOLD,13));
+		CEP[i].setText("CEP: "+conteudo [i][6]);
+				
+		dataNascimento[i] = new JLabel();
+		dataNascimento[i].setBounds(580, 0, 100, 30);
+		dataNascimento[i].setFont( new Font("Arial",Font.BOLD,13));
+		dataNascimento[i].setText(conteudo [i][7]);
+		
+		
+		
 		editar[i] = new JButton();
 		editar[i].setBounds(775, 0, 25, 25);
 		editar[i].setToolTipText("Editar");
@@ -155,8 +208,16 @@ public class ClientesStyle extends JFrame{
 
 		clientesCampoNome[i].add(nome[i]);
 		clientesCampoNome[i].add(cargo[i]);
+		clientesCampoNome[i].add(CPF[i]);
+		
+		
 		clientesCampoEndereco[i].add(endereco[i]);
+		clientesCampoEndereco[i].add(bairro[i]);
 		clientesCampoEndereco[i].add(telefone[i]);
+		
+		clientesCampoCidade[i].add(cidade[i]);
+		clientesCampoCidade[i].add(estado[i]);
+		clientesCampoCidade[i].add(CEP[i]);
 
 
 		clientesCampoNome[i].addMouseListener(new clientesCampoAction());

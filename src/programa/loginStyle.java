@@ -23,8 +23,8 @@ public class LoginStyle extends JFrame{
 		setTitle("Realize o login para ter acesso ao conteúdo do programa");
 		setBounds(300, 150, 550, 400);
 		setLayout(null);											   // Deixei sem layout para programar-mos TUDDO =]
-		setUndecorated(true);                                         // com false abre frame dentro de um frame
-		getRootPane().setWindowDecorationStyle(JRootPane.FRAME);     // libera o design da tela
+		setUndecorated(false);                                         // com false abre frame dentro de um frame
+		setResizable(false);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);					//  Arruma o botão de fechar	
 		
 		tudoLogin = new JPanel();       		   // Envolve TODA a janela!!

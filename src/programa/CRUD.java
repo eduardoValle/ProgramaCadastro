@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 
+
 public class CRUD extends MenuLista{
 	
 	String url = "jdbc:mysql://localhost:3306/programa_cadastro";

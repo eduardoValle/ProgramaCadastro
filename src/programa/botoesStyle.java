@@ -28,35 +28,35 @@ public class BotoesStyle extends MenuLista {
 	//	botoes.setBackground(new Color(0, 100, 0));       // descomente a cor para ver a onde está o JPanel
 		botoes.setLayout(null);
 
-		Icon imageVenda = new ImageIcon("C:/Users/Suzana/workspace/ProgramaCadastro/imagens/MINIVENDA.png");
+		Icon imageVenda = new ImageIcon("../ProgramaCadastro/imagens/MINIVENDA.png");
 		venda = new JButton(imageVenda);
 		venda.setText("Venda");
 		venda.setToolTipText("Venda");
 		venda.setBounds(5, 0, 60, 60);
 		venda.setBackground(new Color(10, 89, 193));
 
-		Icon imageClientes = new ImageIcon("C:/Users/Suzana/workspace/ProgramaCadastro/imagens/MINICLIENTE.PNG");
+		Icon imageClientes = new ImageIcon("../ProgramaCadastro/imagens/MINICLIENTE.PNG");
 		clientes = new JButton(imageClientes);
 		clientes.setText("Clientes");
 		clientes.setToolTipText("Clientes");
 		clientes.setBounds(66, 0, 60, 60);
 		clientes.setBackground(new Color(189, 30, 73));
 
-		Icon imageProdutos = new ImageIcon("C:/Users/Suzana/workspace/ProgramaCadastro/imagens/MINIPRODUTO.PNG");
+		Icon imageProdutos = new ImageIcon("../ProgramaCadastro/imagens/MINIPRODUTO.PNG");
 		produtos = new JButton(imageProdutos);
 		produtos.setText("Produtos");
 		produtos.setToolTipText("Produtos");
 		produtos.setBounds(127, 0, 60, 60);
 		produtos.setBackground(new Color(95, 59, 186));
 
-		Icon Funcionarios2 = new ImageIcon("C:/Users/Suzana/workspace/ProgramaCadastro/imagens/MINIFUNCIONARIO.PNG");
+		Icon Funcionarios2 = new ImageIcon("../ProgramaCadastro/imagens/MINIFUNCIONARIO.PNG");
 		funcionarios = new JButton(Funcionarios2);
 		funcionarios.setText("Funcionários");
 		funcionarios.setToolTipText("Funcionários");
 		funcionarios.setBounds(188, 0, 60, 60);
 		funcionarios.setBackground(new Color(0, 161, 0));
 
-		Icon imageRelatorios = new ImageIcon("C:/Users/Suzana/workspace/ProgramaCadastro/imagens/MINIRELATORIO.PNG");
+		Icon imageRelatorios = new ImageIcon("../ProgramaCadastro/imagens/MINIRELATORIO.PNG");
 		relatorios = new JButton(imageRelatorios);
 		relatorios.setText("Relatório");
 		relatorios.setToolTipText("Relatório");

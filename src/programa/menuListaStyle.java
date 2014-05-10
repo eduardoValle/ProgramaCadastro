@@ -2,7 +2,6 @@ package programa;
 
 import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.Cursor;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -13,13 +12,14 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JRootPane;
 
 public class MenuListaStyle extends JFrame{
 		
 	JDesktopPane tudo = new JDesktopPane();       		   // Envolve TODOS os conteudos do programa!!
 	JPanel fundo    = new JPanel();      				  // Envolve TODA a parte de conteudo, ou seja abaixo dos botoes!!
-
+	JPanel central;
+	CardLayout gerenciadorDeConteudo;
+	
 	public MenuListaStyle()	{
 	
 	/************************
@@ -29,9 +29,7 @@ public class MenuListaStyle extends JFrame{
 	setTitle("Programa de Cadastro de Produtos, Funcionarios e Clientes");
 	setBounds(200, 40, 900, 620);
 	setLayout(null);											   // Deixei sem layout para programar-mos TUDDO =]
-	setUndecorated(true);                                         // com false abre frame dentro de um frame
-	getRootPane().setWindowDecorationStyle(JRootPane.FRAME);     // libera o design da tela
-
+	setUndecorated(false);                                         // com false abre frame dentro de um frame
 
 
 	/**********************************
@@ -66,10 +64,12 @@ public class MenuListaStyle extends JFrame{
 //	tudo.setBackground(new Color(205, 92, 92));  		     // descomente a cor para ver a onde está o JPanel
 	tudo.setLayout(null);
 		
-	CardLayout gerenciadorDeConteudo = new CardLayout();
+	gerenciadorDeConteudo = new CardLayout();
+	
 	fundo.setBounds(5, 65, 880, 495);
 	fundo.setBackground(new Color(112, 128, 144));         			   // descomente a cor para ver a onde está o JPanel
 	fundo.setLayout(gerenciadorDeConteudo);
+	
 	
 	tudo.add(fundo);
 

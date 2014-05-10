@@ -75,9 +75,9 @@ public class AcessoBanco {
 	public static void main(String[] args){
 		System.out.println(Ler("login"));
 		
+	//	Ler("login");
 	//	AcessoBanco();
 		
 	}
-	
-		
+			
 }

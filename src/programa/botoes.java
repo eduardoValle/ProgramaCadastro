@@ -38,11 +38,10 @@ public class Botoes extends BotoesStyle{
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-
-			Clientes j = new Clientes();     // olhar nome 
-			fundo.add(j.clientes);
-			j.setVisible(true);
-//			j.CarregarConteudo();
+			Clientes clientes = new Clientes();   			
+			fundo.add(clientes.clientes);
+			gerenciadorDeConteudo.first( fundo );
+		
 		}
 	}
 	
