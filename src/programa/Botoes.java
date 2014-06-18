@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
-
 import javax.swing.JOptionPane;
 
 public class Botoes extends BotoesStyle{
@@ -21,8 +20,7 @@ public class Botoes extends BotoesStyle{
 		ir.addActionListener(new BotaoIr());	
 		
 	}
-	
-	
+		
 	class BotaoVenda implements ActionListener{
 
 		@Override
@@ -38,10 +36,14 @@ public class Botoes extends BotoesStyle{
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			Clientes clientes = new Clientes();   			
-			fundo.add(clientes.clientes);
-			gerenciadorDeConteudo.first( fundo );
 		
+			Clientes cli = new Clientes();			
+			tudo.remove(fundo);
+			tudo.add(cli.fundo);
+/*			fundo.add(cli.tabelaClientes.tabela.getTableHeader(), BorderLayout.PAGE_START);
+			fundo.add(cli.tabelaClientes.tabela, BorderLayout.CENTER);
+*/
+			
 		}
 	}
 	
@@ -75,14 +77,10 @@ public class Botoes extends BotoesStyle{
 		}
 	}
 	
-	
-	
 	/*******************************
 	 *   GERENCIMENTO DE PESQUISA *
 	*******************************/
-	
-	
-	
+		
 	class BotaoIr implements ActionListener{
 
 		@Override
@@ -99,22 +97,14 @@ public class Botoes extends BotoesStyle{
 		public void focusGained(FocusEvent arg0) {
 			if(pesquisa.getText().equals("Pesquisar!!")){
 				pesquisa.setText("");
-			}
-			
+			}			
 		}
 
 		@Override
 		public void focusLost(FocusEvent arg0) {
 			if(pesquisa.getText().equals("")){
 				pesquisa.setText("Pesquisar!!");
-			}
-			
-		}
-		
+			}			
+		}		
 	}
-
 }
-
-
-
-

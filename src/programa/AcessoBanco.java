@@ -13,16 +13,15 @@ public class AcessoBanco {
 	static String url = "jdbc:mysql://localhost:3306/programa_cadastro";
 
 	
-	public static void	AcessoBanco(){		
+	public AcessoBanco(){		
 		
 		String sql = "insert into login (login, senha) values ('ehheheheeheh!', 'ohohohohohohoh!')";
 		
 		try(
-			Connection conexao = DriverManager.getConnection(url, "root", "root");
+			Connection conexao = DriverManager.getConnection(url, "root", "");
 			PreparedStatement stm = conexao.prepareStatement(sql);								
 			){
 		stm.executeUpdate();
-			
 			
 			System.out.println("Deu!! =D");
 			
@@ -51,7 +50,7 @@ public class AcessoBanco {
 		String sql = "SELECT * FROM "+ tabela;
 		try(
 				
-			Connection conexao = DriverManager.getConnection(url, "root", "root");
+			Connection conexao = DriverManager.getConnection(url, "root", "");
 			PreparedStatement stm = conexao.prepareStatement(sql);
 			ResultSet rs = stm.executeQuery(sql)){
 			while(rs.next()){
@@ -67,8 +66,7 @@ public class AcessoBanco {
 			return null;	
 		}
 				
-		return lista;	
-	
+		return lista;		
 	}	
 	
 	
@@ -78,6 +76,5 @@ public class AcessoBanco {
 	//	Ler("login");
 	//	AcessoBanco();
 		
-	}
-			
+	}			
 }

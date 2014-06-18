@@ -9,23 +9,22 @@ public class MenuMeio extends MenuMeioStyle{
 	
 	public MenuMeio(){
 		
-	//	menuMeio.setVisible(true); 
-		
 		novoVenda.addActionListener(new BotaoNovoVenda());
 		novoCliente.addActionListener(new BotaoNovoCliente());
 		novoProduto.addActionListener(new BotaoNovoProduto());
 		novoFuncionario.addActionListener(new BotaoNovoFuncionario());
 		novoRelatorioVendas.addActionListener(new BotaoNovoRelatorioVendas());
 		novoRelatorioProdutos.addActionListener(new BotaoNovoRelatorioProdutos());
-		
 	}
-	
 	
 	class BotaoNovoVenda implements ActionListener{
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			String s = novoVenda.getText();
+			
+/*			ClientesCadastro c = new ClientesCadastro();
+			fundo.add(c.cliente);*/
 			
 			JOptionPane.showMessageDialog(null, s);
 		}
@@ -35,9 +34,14 @@ public class MenuMeio extends MenuMeioStyle{
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			String s = novoCliente.getText();
-			JOptionPane.showMessageDialog(null, s);
-		}
+		/*	String s = novoCliente.getText();
+			JOptionPane.showMessageDialog(null, s);*/
+		
+			ClientesCadastro cli = new ClientesCadastro();
+			tudo.remove(fundo);
+			tudo.add(fundo);
+			fundo.add(cli.cliente);
+		}		
 	}
 	
 	class BotaoNovoProduto implements ActionListener{
@@ -86,8 +90,6 @@ public class MenuMeio extends MenuMeioStyle{
 
 		MenuMeio m = new MenuMeio();
 		m.setVisible(true);
-		m.menuMeio.setVisible(true);
-		
-		
+//		m.menuMeio.setVisible(true);
 	}
 }

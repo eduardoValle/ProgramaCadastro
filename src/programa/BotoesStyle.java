@@ -17,11 +17,9 @@ public class BotoesStyle extends MenuLista {
 
 	public BotoesStyle(){
 
-		cima.setBounds(0, 0, 890, 65);
+		cima.setBounds(0, 0, width, 65);
 	//	cima.setBackground(new Color(235, 220, 160));  		     // descomente a cor para ver a onde está o JPanel
 		cima.setLayout(null);
-
-		
 
 		JPanel botoes = new JPanel();          // Envolve TUDO que estám em cima (botões, campo pesquisa...)
 		botoes.setBounds(0, 2, 350, 65);
@@ -70,7 +68,7 @@ public class BotoesStyle extends MenuLista {
 
 
 		JPanel pesquisar = new JPanel();           // Envolve o campo e o botão de pesquisa
-		pesquisar.setBounds(655, 30, 233, 33);
+		pesquisar.setBounds(width-245, 30, 233, 33);
 //		pesquisar.setBackground(new Color(235, 220, 160));      // descomente a cor para ver a onde está o JPanel
 		pesquisar.setLayout(null);
 
@@ -82,7 +80,7 @@ public class BotoesStyle extends MenuLista {
 		ir = new JButton();
 		ir.setText("Ir");
 		ir.setToolTipText("Pesquisar");
-		ir.setBounds(200, 6, 25, 25);
+		ir.setBounds(200, 7, 25, 24);
 		ir.setBackground(new Color(0, 191, 242));
 
 		cima.add(pesquisar);

@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 
 
+@SuppressWarnings("serial")
 public class CRUD extends MenuLista{
 	
 	String url = "jdbc:mysql://localhost:3306/programa_cadastro";
@@ -43,6 +44,21 @@ public class CRUD extends MenuLista{
 			return null;
 		}
 		return array;
+	}	
+	
+	public void Deletar(String tabela, String campo, String valor){
+		
+		String sql = "DELETE FROM "+tabela+" WHERE "+campo+" =?";
+				
+		try(
+			Connection conexao = DriverManager.getConnection(url, "root", "root");
+			PreparedStatement stm = conexao.prepareStatement(sql)){
+			stm.setString(1, valor);
+			stm.executeUpdate();
+			
+		}catch(Exception e){                              // APAGAR NA VERSÃO FINAL
+	
+			System.out.println(e);
+		}	
 	}
-
 }

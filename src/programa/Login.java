@@ -1,5 +1,5 @@
 package programa;
-
+	
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 import javax.swing.BorderFactory;
 
+@SuppressWarnings("serial")
 public class Login extends LoginStyle{
 
 	String url = "jdbc:mysql://localhost:3306/programa_cadastro";
@@ -40,7 +41,7 @@ public class Login extends LoginStyle{
 			return false;
 		}		
 	}
-
+	
 	
 	public void Logar(){
 		
@@ -51,7 +52,7 @@ public class Login extends LoginStyle{
 			String pass = new String(senha.getPassword());			
 			String sql = "SELECT * FROM login WHERE login= '"+login.getText()+"' " + "AND senha= '"+pass+"'";  
 			try(	
-				Connection conexao = DriverManager.getConnection(url, "root", "root");
+				Connection conexao = DriverManager.getConnection(url, "root", "");
 				PreparedStatement stm = conexao.prepareStatement(sql);
 				ResultSet rs = stm.executeQuery(sql);
 			){
@@ -60,17 +61,15 @@ public class Login extends LoginStyle{
 
 					lista.add(rs.getString("login"));
 					lista.add(rs.getString("senha"));
-
 				}
 				
 				if(lista.get(0).equals(login.getText()) && lista.get(1).equals(pass)){
 
 					// CONSEGUIU LOGAR
 					
+					setVisible(false);
 					MenuMeio m = new MenuMeio();
 					m.setVisible(true);
-					m.menuMeio.setVisible(true);
-
 				}
 
 			}catch(Exception g){   // NÃO CONSEGUIU LOGAR
@@ -79,9 +78,7 @@ public class Login extends LoginStyle{
 				janelaAlerta.setText("Login ou senha incorretos, ou não existem!!");
 				alerta.setBorder(BorderFactory.createLineBorder(Color.red,3));
 				alerta.setBackground(new Color(255, 193, 193));
-
 				alerta.add(janelaAlerta);
-
 			}
 
 		}else{     // fechando if(camposVazios){}
@@ -90,9 +87,7 @@ public class Login extends LoginStyle{
 			janelaAlerta.setText("Você prêcisa preencher ambos os campos!!");
 			alerta.setBorder(BorderFactory.createLineBorder(Color.red,3));
 			alerta.setBackground(new Color(255, 193, 193));
-
-			alerta.add(janelaAlerta);
-			
+			alerta.add(janelaAlerta);			
 		}
 	}
 
@@ -106,25 +101,18 @@ public class Login extends LoginStyle{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			
-			Logar();
-			
+			Logar();			
 		}
-	}
-	
-	
+	}	
+
+	// COLOCANDO O EVENTO NO BOTÃO ENTER
 	class CampoLogar implements KeyListener{
 
 		@Override
-		public void keyPressed(KeyEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
+		public void keyPressed(KeyEvent e) {}
 
 		@Override
-		public void keyReleased(KeyEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
+		public void keyReleased(KeyEvent e) {}
 
 		@Override
 		public void keyTyped(KeyEvent evento) {
@@ -134,14 +122,9 @@ public class Login extends LoginStyle{
 				Logar();
 			}
 		}
-		
-	}
-	
+	}	
 	
 	public static void main(String arg[]){ 
 		new Login().setVisible(true);
 	}
-
 }
-
-

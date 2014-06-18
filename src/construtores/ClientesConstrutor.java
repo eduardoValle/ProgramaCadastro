@@ -1,5 +1,8 @@
-package programa;
+package construtores;
 
+import programa.ClientesCadastro;
+
+@SuppressWarnings("serial")
 public class ClientesConstrutor extends ClientesCadastro{
 	
 public ClientesConstrutor(String nome, String endereco, String cidade, String bairro, String estado, String cep, String tel, String cpf, String data){
@@ -11,16 +14,13 @@ public ClientesConstrutor(String nome, String endereco, String cidade, String ba
 		this.Testado = estado;
 		this.Tcep = cep;
 		this.Tcpf = cpf;
-		this.Tdata = data;
 		this.Ttel = tel;
-				
 	}
-	
 	
 	@Override
 	public String toString(){
 		
-		return Tnome+", "+Tendereco+", "+Tbairro+", "+Tcidade+", "+Testado+", "+Tcep+", "+Tcpf+", "+Tdata+", "+Ttel;
+		return Tnome+", "+Tendereco+", "+Tbairro+", "+Tcidade+", "+Testado+", "+Tcep+", "+Tcpf+", "+Ttel;
 		
 	}
 
